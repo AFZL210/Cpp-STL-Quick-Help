@@ -250,15 +250,26 @@ Example-1
     ss >> x;
     cout << x;
     
-Exmaple-2
-    stringstream s(ss);
+Exmaple-2(a)
+    stringstream ss(s);
     string word; // to store individual words
   
     int count = 0;
-    while (s >> word)
+    while (ss >> word)
         count++;
     cout << count;
     NOTE: It will tokenize words on the basis of ' ' (space by default) characters
+
+
+Exmaple-2(b) -- split string in token by a delimiter like split in python/js.
+    stringstream ss(s);
+    string word; // to store individual words
+  
+    while (getline(s, word, '.'))
+        cout<<word<<endl;
+
+    NOTE: It will tokenize words on the basis of '.' now instead of ' ' space.
+
 Example-3
     It can be used very well to extract numbers from string.
     string complex = "1+1i";
